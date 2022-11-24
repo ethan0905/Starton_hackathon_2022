@@ -9,7 +9,23 @@
 ## 🤏 Pitch
 We are 4 students from 42 school and we have been experiencing issues with our client payement (deadline, terms of contract, ...).  
 We thought that using blockchain technology to solve this problem was an interesting idea.  
-  
+ 
+## Sommaire
+
+ - [❗ Problem](#❗ Problem)
+ - [Comment fonctionne GIT](#comment-fonctionne-git)
+ - [Sécurité](#sécurité)
+ - [Inscription GitLab](#inscription)
+ - [Créer un projet](#créer-un-projet)
+ - [Fourcher (forker) un projet](#fourcher-forker-un-projet)
+ - [Gestion des fichiers](#gestion-des-fichiers)
+ - [Demandes de fusion](#demandes-de-fusion)
+ - [Le format Markdown](#am%C3%A9liorer-ses-textes-avec-le-format-markdown)
+ - [Gestion des issues](#les-issues)
+ - [FAQ](#faq)
+ - [Liens](#liens)
+ - [Glossaire](#glossaire)
+ 
 ## ❗ Problem
 #### What problem does your project solve? 
 1. Contract falsification  
