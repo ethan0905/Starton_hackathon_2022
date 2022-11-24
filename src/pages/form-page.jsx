@@ -1,9 +1,55 @@
 import React from "react";
 import { Component } from "react";
 import "../assets/css/form.css";
+import { useState } from "react";
+import axios from 'axios'; 
+import FormData from "form-data";
 
-class FormPage extends Component {
-  render() {
+const starton = axios.create({
+	baseURL: "https://api.starton.io/v3",
+})
+
+function FormPage (){
+	let urls = [];
+	
+	const handleSubmission = () => {
+	};
+
+	const changeHandler = async(event) => {
+		// if (event.target.files[0])
+		// {
+
+		// 	let reader = new FileReader();
+		// 	reader.readAsDataURL(event.target.files[0]);
+		// 	reader.onload = () => {
+		// 		if (reader.readyState === 2) {
+		// 			console.log(reader.result);
+					// starton.post('/ipfs/file',reader.result,{
+					// 	metadata: {}
+					// },
+					// 		).then((response) => {	
+					// 			console.log(response.data);
+					// 		})
+				// }
+		// }
+
+			
+		// 	console.log(typeof event.target.files[0])
+		// 	// console.log(event.target.files[0]);
+		// 	const file1 = new Buffer.from(JSON.stringify(event.target.files[0]));
+		// 	console.log(file1);
+		// 	// const file1 = await toBase64(event.target.files[0]);
+			const data = new FormData();
+			data.append("file", event.target.files[0], event.target.files[0].name);
+			data.append("isSync", true);
+			const res = await starton.post('/ipfs/file',
+				data, {
+						headers: {
+									"x-api-key": 'sk_live_89c7396e-c994-415e-9127-8bb3f7b8a7d4',
+									"Content-Type": "multipart/form-data"},
+				})
+				console.log(res.data);
+	};
     return (
       <>
         <div>
@@ -92,8 +138,18 @@ class FormPage extends Component {
                 </div>
                 <div>
                   <div class="upload-btn-wrapper">
-                    <button class="btn">Upload a file</button>
-                    <input type="file" name="myfile" />
+                    <button class="btn" onClick={handleSubmission}>{urls.length == 2 ? "Files Uploaded":"Upload a file"}</button>
+                    <input 
+					// onClick={starton.post('/ipfs/file',
+					// 	{
+					// 		"metadata": { },
+					// 	}
+					// ).then((response) => {	
+					// 	console.log(response.data);
+					// })}
+					onChange={() => changeHandler(event)}
+					type="file" name="myfile" multiple/> 
+					{/* type="file" name="myfile" /> */}
                   </div>
                 </div>
               </div>
@@ -126,7 +182,6 @@ class FormPage extends Component {
         </div>
       </>
     );
-  }
 }
 
 export default FormPage;
