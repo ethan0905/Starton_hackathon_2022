@@ -17,17 +17,19 @@ We are 4 students from 42 school and we have been experiencing issues with our c
   
 #### How does it fit into the theme "Building a Decentralized Future"?  
 The solution is independant, self governing.  
-We never gonna interact with the contract.
-  
+    
 ## ✅ Solution
 #### How did you resolve this issue?  
 → We decided to solve this issue, by creating an easy to use and decentralized payement protocol service that protect the 2 users during transaction (service-for-money).  
-→ For each mission, we create a unique smart contract that is not editable and non replicable.  
+→ For each mission, we create a unique smart contract that is not editable and not replicable.  
 → We store the documents on decentralised database (IPFS).
   
-We create a trust environment for every users.  
+We create a climate of trust for every users (Open Trust Framework Model).  
   
-#### What technologies did you use?  
+#### What technologies did you use?
+Escalidraw for project diagram  
+Figma to design and prototype the website  
+Trello to manage the project development  
 TailwindCSS and ReactJS for frontend and backend  
 Starton API for the smart contracts managements
 IPFS for the decentralised datastorage  
