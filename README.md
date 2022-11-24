@@ -22,7 +22,7 @@ We never gonna interact with the contract.
   
 ## ✅ Solution
 #### How did you resolve this issue?  
-→ We decided to solve this issue, by creating an easy to use and decentralized payement protocol service that protect the 2 users during transaction.  
+→ We decided to solve this issue, by creating an easy to use and decentralized payement protocol service that protect the 2 users during transaction (service-for-money).  
 → For each mission, we create a unique smart contract that is not editable and non replicable.  
 → We store the documents on decentralised database (IPFS).
   
