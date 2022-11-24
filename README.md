@@ -35,7 +35,8 @@ Starton API for the smart contracts managements
 IPFS for the decentralised datastorage  
   
 #### What was your biggest technical challenge and how does your solution solve it?
-?
+We never worked on Web3 before, so the biggest technical challenge was to give user the ability to write his own smart contract without knowledge.  
+Our solution solve it by creating a form interface to write directly into our smart contract.  
 
 ## ⚙️ How to run the project ? 
   
