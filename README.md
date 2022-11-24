@@ -26,10 +26,8 @@ Starton API for the smart contracts managements
 `git clone https://github.com/ethan0905/hackathon.git`
  
 2. Run at the root of repository, the following bash commands:
-`docker-compose up`
-`docker build -t react .`  
-`docker run -p 3000:3000 -d react`  
-  
+`docker-compose up --build`
+    
 3. Then go to the following url on internet:  
 `localhost:3000`  
   
