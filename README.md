@@ -49,15 +49,6 @@ Our solution solve it by creating a form interface that write directly into our 
 3. Then go to the following url on internet:  
 `localhost:3000`  
   
-## Process
-
- - Docker
- - Metamask connection
- - Figma
- - Smartcontract
- - npm install react-ipfs-uploader
- - npm install ipfs -g (for ipfs)
-
 ## Business model
 
 For each contract, we take a pourcentage of the total amount (6%)  
