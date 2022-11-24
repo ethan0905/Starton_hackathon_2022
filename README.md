@@ -62,10 +62,12 @@ Our solution solve it by creating a form interface that write directly into our 
   
 ## 📈 Business model
 
-For each contract, we take a pourcentage of the total amount (6%)  
-
-pas besoin de bcp de personnes (peu couteux)  
-ajout differents type de contracts -> toucher une plus grande audience  
+- For each contract, we take a pourcentage of the total amount (6% for services)
+- Create a coin and add staking during the mission
+- Add different type of contract
+- We just need a team with several developper
+- A contract less than 100$ will be free to attract some users
+- With a DAO, we didn't a huge fund rising 
 
 ## 🧭 Roadmap
 
@@ -81,8 +83,11 @@ ajout differents type de contracts -> toucher une plus grande audience
     - [ ] Interaction with Smart contract at {address} on {network}
 
 ## 🖥️ Development perspective
-Create a DAO,  
-Create our coin, the more user is holding, the less the additionnal fees gonna be 
+
+Create a DAO,
+Create our coin, the more user is holding, the less the additionnal fees gonna be
+Holder of our coin will gonna get rewarded for voting in case of disagreement
+Add a service provider marketplace like malt
 
 ## ⚠️ License
 Distributed under the MIT License. See `LICENSE.txt` for more information.  
