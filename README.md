@@ -12,7 +12,7 @@ We thought that using blockchain technology to solve this problem was an interes
  
 ## Sommaire
 
- - [❗ Problem](#❗ Problem)
+ - [❗ Problem](#Problem)
  - [Comment fonctionne GIT](#comment-fonctionne-git)
  - [Sécurité](#sécurité)
  - [Inscription GitLab](#inscription)
