@@ -7,8 +7,9 @@
 </div>
 
 ## 🤏 Pitch
-We are 4 students from 42 school and we have been experiencing issues with our client payement. We create this projet to solve this with a smart contract store on a blockchain !
-
+We are 4 students from 42 school and we have been experiencing issues with our client payement (deadline, terms of contract, ...).  
+We thought that using blockchain technology to solve this problem was an interesting idea.  
+  
 ## ❗ Problem
 #### What problem does your project solve? 
 1. Contract falsification  
