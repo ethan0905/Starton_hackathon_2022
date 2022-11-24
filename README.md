@@ -20,19 +20,19 @@ The solution is independant, self governing.
     
 ## ✅ Solution
 #### How did you resolve this issue?  
-→ We decided to solve this issue, by creating an easy to use and decentralized payement protocol service that protect the 2 users during transaction (service-for-money).  
-→ For each mission, we create a unique smart contract that is not editable and not replicable.  
-→ We store the documents on decentralised database (IPFS).
+1. We decided to solve this issue, by creating an easy to use and decentralized payement protocol service that protect the 2 users during transaction (service-for-money).  
+2. For each mission, we create a unique smart contract that is not editable and not replicable.  
+3. We store the documents on decentralised database (IPFS).
   
 We create a climate of trust for every users (Open Trust Framework Model).  
   
 #### What technologies did you use?
-Escalidraw for project diagram  
-Figma to design and prototype the website  
-Trello to manage the project development  
-TailwindCSS and ReactJS for frontend and backend  
-Starton API for the smart contracts managements
-IPFS for the decentralised datastorage  
+- Escalidraw for project diagram  
+- Figma to design and prototype the website  
+- Trello to manage the project development  
+- TailwindCSS and ReactJS for frontend and backend  
+- Starton API for the smart contracts managements
+- IPFS for the decentralised datastorage  
   
 #### What was your biggest technical challenge and how does your solution solve it?
 We never worked on Web3 before, so the biggest technical challenge was to give user the ability to write his own smart contract without knowledge.  
