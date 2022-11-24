@@ -6,13 +6,20 @@
 
 </div>
 
+## Pitch
+We are 4 students from 42 school and we have been experiencing issues with our client payement. We create this projet to solve this with a smart contract store on a blockchain !
+
 ## ❗ Problem
-#### What problem does your project solve?  
+#### What problem does your project solve? 
+
 #### How does it fit into the theme "Building a Decentralized Future"?  
   
 ## ✅ Solution
 #### How did you resolve this issue?  
-→ We decided to solve this issue, by creating an easy to use and decentralized payement protocol service that protect the 2 users during transaction. [...] 
+→ We decided to solve this issue, by creating an easy to use and decentralized payement protocol service that protect the 2 users during transaction. 
+→ For each mission, we create a unique smart contract that is not editable and non replicable.
+→ We store the documents on ipfs
+  
 #### What technologies did you use?  
 TailwindCSS and ReactJS for frontend and backend  
 Starton API for the smart contracts managements  
