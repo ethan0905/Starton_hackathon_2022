@@ -11,9 +11,9 @@ We are 4 students from 42 school and we have been experiencing issues with our c
 
 ## ❗ Problem
 #### What problem does your project solve? 
-- Contract distortion
-- Deadline for payement not respected
-- Wrong amount
+1. Contract falsification  
+2. Deadline for payement not respected  
+3. Terms of contract not respected  
   
 #### How does it fit into the theme "Building a Decentralized Future"?  
 The solution is independant, self governing.  
