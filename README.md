@@ -18,11 +18,12 @@ We are 4 students from 42 school and we have been experiencing issues with our c
 #### How did you resolve this issue?  
 → We decided to solve this issue, by creating an easy to use and decentralized payement protocol service that protect the 2 users during transaction.  
 → For each mission, we create a unique smart contract that is not editable and non replicable.  
-→ We store the documents on ipfs  
+→ We store the documents on decentralised database (IPFS).  
   
 #### What technologies did you use?  
 TailwindCSS and ReactJS for frontend and backend  
-Starton API for the smart contracts managements  
+Starton API for the smart contracts managements
+IPFS for the decentralised datastorage  
   
 #### What was your biggest technical challenge and how does your solution solve it?
 ?
