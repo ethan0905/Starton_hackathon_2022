@@ -32,7 +32,7 @@ Starton API for the smart contracts managements
 1. Clone the repository:  
 `git clone https://github.com/ethan0905/hackathon.git`
  
-2. Run at the root of repository, the following bash commands:
+2. Run at the root of repository, the following bash commands:  
 `docker-compose up --build`
     
 3. Then go to the following url on internet:  
