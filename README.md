@@ -18,7 +18,6 @@ We are 4 students from 42 school and we have been experiencing issues with our c
 #### How does it fit into the theme "Building a Decentralized Future"?  
 The solution is independant, self governing.  
 We never gonna interact with the contract.
-
   
 ## ✅ Solution
 #### How did you resolve this issue?  
@@ -58,8 +57,10 @@ IPFS for the decentralised datastorage
 
 ## Business model
 
-pas besoin de bcp de personnes (peu couteux)
-ajout differents type de contracts -> toucher une plus grande audience 
+For each contract, we take a pourcentage of the total amount (6%)  
+
+pas besoin de bcp de personnes (peu couteux)  
+ajout differents type de contracts -> toucher une plus grande audience  
 
 ## 🧭 Roadmap
 
@@ -75,7 +76,8 @@ ajout differents type de contracts -> toucher une plus grande audience
     - [ ] Interaction with Smart contract at {address} on {network}
 
 ## Development perspective
-Create a DAO, 
+Create a DAO,  
+Create our coin, the more user is holding, the less the additionnal fees gonna be 
 
 ## ⚠️ License
 Distributed under the MIT License. See `LICENSE.txt` for more information.  
