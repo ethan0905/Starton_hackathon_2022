@@ -1,0 +1,27 @@
+.background {
+	background-color: #f4f1ee;
+}
+
+.box-summary {
+	background-color: #ffffff;
+	border-radius: 20px;
+	padding: 1rem;
+}
+
+.auto {
+	line-break: auto;
+}
+
+/* p {
+	word-break: ;
+} */
+
+.text {
+	font-size: calc(10px + 0.390625vw);
+}
+
+.crop { 
+	overflow: hidden;
+	line-height: 50px;
+	width: 280px;
+}
