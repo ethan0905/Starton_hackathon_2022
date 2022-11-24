@@ -49,7 +49,7 @@ Our solution solve it by creating a form interface that write directly into our 
 3. Then go to the following url on internet:  
 `localhost:3000`  
   
-## Business model
+## 📈 Business model
 
 For each contract, we take a pourcentage of the total amount (6%)  
 
@@ -69,7 +69,7 @@ ajout differents type de contracts -> toucher une plus grande audience
 - [ ] Form:
     - [ ] Interaction with Smart contract at {address} on {network}
 
-## Development perspective
+## 🖥️ Development perspective
 Create a DAO,  
 Create our coin, the more user is holding, the less the additionnal fees gonna be 
 
