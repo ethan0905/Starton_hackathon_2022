@@ -1,9 +1,10 @@
 import React from "react";
 import { Component } from "react";
 import Logo from "../assets/PAYCONSENT.svg"
-
+import axios from "axios";
 import "../assets/css/summary-page.css";
 import "../assets/css/form.css";
+import { useParams } from "react-router-dom";
 
 const json = {
   data: {
@@ -15,11 +16,32 @@ const json = {
   },
 };
 
+const starton = axios.create({
+  baseURL: "https://api.starton.io/v3",
+  headers:{
+    "x-api-key": "sk_live_89c7396e-c994-415e-9127-8bb3f7b8a7d4",
+  }
+});
+
+async function getInfo(contractaddress){
+  console.log(ethereum.selectedAddress)
+  const res = await starton.post("/smart-contract/binance-testnet/"+contractaddress+"/read",{
+    functionName :"getUsersInfo",
+    params: [
+      String(ethereum.selectedAddress),
+    ],
+  },
+  ).then((response)=> console.log(response.data));
+}
+
 function SummaryPage(){
+  let params = useParams();
+
   return (
     <div className="w-full h-auto overflow-scroll block h-screen background p-4 flex items-center justify-center">
       <div className="w-screen ml-[64px] mt-[14px]">
         <img src={Logo} alt="Logo" className="h-[30px]"/>
+        <p>{params.contractaddress}</p>
       </div>
       {/* <div className="flex items-center justify-center flex-col ">
         <div className="sm:text-3xl text-2xl font-semibold text-center text-sky-600 mb-12">
@@ -126,7 +148,7 @@ function SummaryPage(){
                 </button>
               </div>
               <div>
-                <div class="btn-status-pending" type="submit">
+                <div class="btn-status-pending" type="submit" onClick={() => getInfo(params.contractaddress)}>
                   Pending
                 </div>
               </div>

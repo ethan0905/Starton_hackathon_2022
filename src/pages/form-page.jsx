@@ -21,11 +21,9 @@ async function uploadFiletoIpfs(file){
       "Content-Type": "multipart/form-data",
     },
   });
-  console.log(res.data);
   return (res.data);
 }
 
-//param en string
 
 async function deployContract(type_creator_user, type_other_user, creator_user, other_user, transactionAmount, urls){
   const res = await starton.post("/smart-contract/from-bytecode",
@@ -224,8 +222,9 @@ async function deployContract(type_creator_user, type_other_user, creator_user, 
 			String(other_user),
 			String(transactionAmount),
       [
-        String(urls[0]),
-        String(urls[1])
+		String(urls[0]),
+		String(urls[1])
+      
       ]
 		]},
     {
