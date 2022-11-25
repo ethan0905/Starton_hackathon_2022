@@ -58,8 +58,20 @@ Our solution solve it by creating a form interface that write directly into our 
 `docker-compose up --build`
   
 3. Then go to the following url on internet:  
-`localhost:3000`  
-  
+`localhost:3000`
+
+## 🦶 Step to use Payconsent
+
+- Fill the form
+- Upload the different file
+- Enter the amount and pay
+- Them let's start the mission ✔️
+
+## technological invasion
+
+- The contract will be unique with the smart contract
+- The file will be storage with ipfs (no centralized data)
+
 ## 📈 Business model
 
 - For each contract, we take a pourcentage of the total amount (6% for services)
@@ -69,22 +81,10 @@ Our solution solve it by creating a form interface that write directly into our 
 - A contract less than 100$ will be free to attract some users
 - With a DAO, we didn't a huge fund rising 
 
-## 🧭 Roadmap
-
-- [x] Docker installation
-- [x] Metamask wallet connection
-- [ ] Smart contract
-    - [x] Write our own contract
-    - [ ] Use of Starton API to create Smart contract from bytecode
-    - [ ] Use of Starton API to calls Smart contract located at {address} on {network}
-    - [ ] Deletes Smart contract located at {address} on {network}
-- [x] Add image uploader on IPFS
-- [ ] Form:
-    - [ ] Interaction with Smart contract at {address} on {network}
-
 ## 🖥️ Development perspective
 
-Create a DAO,
+Have a little check of the delivery service
+Create a DAO
 Create our coin, the more user is holding, the less the additionnal fees gonna be
 Holder of our coin will gonna get rewarded for voting in case of disagreement
 Add a service provider marketplace like malt
