@@ -1,84 +1,75 @@
 import React from "react";
-import { Component } from "react";
 import "../assets/css/form.css";
-import { useState } from "react";
-import axios from 'axios'; 
+import "../assets/css/button.css";
+import "../assets/css/summary-page.css";
+import Logo from "../assets/PAYCONSENT.svg"
+
+import axios from "axios";
 import FormData from "form-data";
 
+const json = {
+  data: {
+    price: "2.7",
+    address: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  },
+  ipfs: {
+    file: "https://ipfs.io/ipfs/Qme7ss3ARVgxv6rXqVPiikMJ8u2NLgmgszg13pYrDKEoiu",
+  },
+};
+
 const starton = axios.create({
-	baseURL: "https://api.starton.io/v3",
-})
+  baseURL: "https://api.starton.io/v3",
+});
 
-function FormPage (){
-	let urls = [];
-	
-	const handleSubmission = () => {
-	};
+function FormPage() {
+  let urls = [];
 
-	const changeHandler = async(event) => {
-		// if (event.target.files[0])
-		// {
+  const handleSubmission = () => {};
 
-		// 	let reader = new FileReader();
-		// 	reader.readAsDataURL(event.target.files[0]);
-		// 	reader.onload = () => {
-		// 		if (reader.readyState === 2) {
-		// 			console.log(reader.result);
-					// starton.post('/ipfs/file',reader.result,{
-					// 	metadata: {}
-					// },
-					// 		).then((response) => {	
-					// 			console.log(response.data);
-					// 		})
-				// }
-		// }
-
-			
-		// 	console.log(typeof event.target.files[0])
-		// 	// console.log(event.target.files[0]);
-		// 	const file1 = new Buffer.from(JSON.stringify(event.target.files[0]));
-		// 	console.log(file1);
-		// 	// const file1 = await toBase64(event.target.files[0]);
-			const data = new FormData();
-			data.append("file", event.target.files[0], event.target.files[0].name);
-			data.append("isSync", true);
-			const res = await starton.post('/ipfs/file',
-				data, {
-						headers: {
-									"x-api-key": 'sk_live_89c7396e-c994-415e-9127-8bb3f7b8a7d4',
-									"Content-Type": "multipart/form-data"},
-				})
-				console.log(res.data);
-	};
-    return (
-      <>
-        <div>
-          <h1 class="logo-over-white">
-            PAYCONSENT<span class="dot-color">.</span>
-          </h1>
-        </div>
-        <div className="total-form">
-          <div className="green-line">
-          </div>
-          <form className="form-div-total">
+  const changeHandler = async (event) => {
+    if (event.target.files[0]) {
+      const data = new FormData();
+      data.append("file", event.target.files[0], event.target.files[0].name);
+      data.append("isSync", true);
+      const res = await starton.post("/ipfs/file", data, {
+        headers: {
+          "x-api-key": "sk_live_89c7396e-c994-415e-9127-8bb3f7b8a7d4",
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log(res.data);
+    }
+  };
+  return (
+    <>
+      <div>
+        {/* <h1 className="logo-over-white">
+          PAYCONSENT<span className="dot-color">.</span>
+        </h1> */}
+        <img src={Logo} alt="Logo" className="h-[30px] ml-[80px] mt-[30px]"/>
+      </div>
+      <div className="total-form">
+        <form className="form-div-total">
+          <div className="green-line"></div>
+          <div className="form-div">
             <div className="form-div1">
               <div className="title-form">
                 <h1>Create a contract</h1>
               </div>
               <div className="status-div">
                 <div className="label-status">
-                  <label class="status-title" for="contractStatus">
+                  <label className="status-title">
                     Status
                   </label>
                   <p className="text-[13px]">Seller or Buyer</p>
                 </div>
                 <div className="select-box-div">
                   <select className="select-box">
-                    <option value="0" selected disabled>
+                    <option defaultValue="0" disabled>
                       Status
                     </option>
-                    <option value="1">Buyer</option>
-                    <option value="2">Seller</option>
+                    <option defaultValue="1">Buyer</option>
+                    <option defaultValue="2">Seller</option>
                   </select>
                 </div>
               </div>
@@ -86,23 +77,32 @@ function FormPage (){
             <div className="form-div2">
               <div className="status-div">
                 <div className="label-status">
-                  <label class="status-title" for="contractName">
+                  <label className="status-title">
                     My Wallet ID
                   </label>
                   <p className="text-[13px]">The creator of this contract</p>
                 </div>
                 <div className="select-box-div">
-                  <input
-                    className="select-box"
-                    type="name"
-                    id="exampleInput8"
-                    placeholder="Enter your wallet ID"
-                  />
+                  <div className="wallet-id-total">
+                    <div className="wallet-id-section">
+                      <div className="id-metamask-form">
+                        <i className="fas fa-hashtag"></i>
+                        <strong className="id-name">{json.data.address}</strong>
+                        <i
+                          style={{ cursor: "pointer", marginLeft: 2 }}
+                          onClick={() => {
+                            navigator.clipboard.writeText(json.data.address);
+                          }}
+                          className="far fa-clone"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="status-div">
                 <div className="label-status">
-                  <label class="status-title" for="contractSubject">
+                  <label className="status-title">
                     Subject
                   </label>
                   <p className="text-[13px]">About the contract</p>
@@ -118,7 +118,7 @@ function FormPage (){
               </div>
               <div className="status-div">
                 <div className="label-status">
-                  <label class="status-title" for="contractWalletAddress">
+                  <label className="status-title">
                     Sending To
                   </label>
                   <p className="text-[13px]">The receiver</p>
@@ -133,29 +133,27 @@ function FormPage (){
               </div>
               <div className="status-div-upload">
                 <div className="label-status">
-                  <label class="status-title">File To Upload</label>
+                  <label className="status-title">File To Upload</label>
                   <p className="text-[13px]">(Quotation, Specifications ...)</p>
                 </div>
                 <div>
-                  <div class="upload-btn-wrapper">
-                    <button class="btn" onClick={handleSubmission}>{urls.length == 2 ? "Files Uploaded":"Upload a file"}</button>
-                    <input 
-					// onClick={starton.post('/ipfs/file',
-					// 	{
-					// 		"metadata": { },
-					// 	}
-					// ).then((response) => {	
-					// 	console.log(response.data);
-					// })}
-					onChange={() => changeHandler(event)}
-					type="file" name="myfile" multiple/> 
-					{/* type="file" name="myfile" /> */}
+                  <div className="upload-btn-wrapper">
+                    <button className="btn" onClick={handleSubmission}>
+                      {urls.length == 2 ? "Files Uploaded" : "Upload a file"}
+                    </button>
+                    <input
+                      onChange={() => changeHandler(event)}
+                      type="file"
+                      name="myfile"
+                      multiple
+                    />
                   </div>
                 </div>
               </div>
+
               <div className="status-div">
                 <div className="label-status">
-                  <label class="status-title" for="contractPrice">
+                  <label className="status-title">
                     Price
                   </label>
                 </div>
@@ -172,16 +170,21 @@ function FormPage (){
             </div>
             <div className="form-div3">
               <div>
-                <button type="dismiss">Dismiss</button>
+                <button className="text-[13px]" type="dismiss">
+                  Dismiss
+                </button>
               </div>
               <div>
-                <button type="submit">Submit</button>
+                <button className="btn-connexion" type="submit">
+                  Submit
+                </button>
               </div>
             </div>
-          </form>
-        </div>
-      </>
-    );
+          </div>
+        </form>
+      </div>
+    </>
+  );
 }
 
 export default FormPage;

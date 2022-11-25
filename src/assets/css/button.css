@@ -1,0 +1,131 @@
+.form-div3 .btn-connexion {
+    background-color: #A5DFD5 ;
+    color: #282828;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 10rem;
+    min-height: 2.5em;
+    max-height: 2.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.form-div3 .btn-status-pending {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5CECC ;
+    color: #5F2D2D;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13px;
+    border-radius: 0.4rem;
+    height: 2em;
+    width: 10em;
+    /* max-height: 2em; */
+
+}
+
+.form-div3 .btn-status-claimed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A5DFD5 ;
+    color: #2C4D47;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13px;
+    border-radius: 0.4rem;
+    height: 2em;
+    width: 10em;
+}
+
+.form-div3 .btn-status-progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CCD4F5 ;
+    color: #2D375F;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13px;
+    border-radius: 0.4rem;
+    height: 2em;
+    width: 10em;
+}
+
+.btn-connexion {
+    background-color: #A5DFD5 ;
+    color: #282828;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 10rem;
+    min-height: 2.5em;
+    max-height: 2.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+/* .btn-connexion2 {
+    color: #7c40b7;
+    background-color: #A5DFD5;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 10rem;
+    min-height: 2.5em;
+    max-height: 2.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+} */
+
+.btn-connexion:hover {
+    background-color: #282828 ;
+    color: #F4F1EE;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    transition: 0.4s ease-out;
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* .btn-status-sign:hover {
+    background-color: #5F2D2D ;
+    color: #F5CECC;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    transition: 0.4s ease-out;
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+.btn-status-validated:hover {
+    background-color: #2C4D47 ;
+    color: #A5DFD5;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    transition: 0.4s ease-out;
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+.btn-status-claim:hover {
+    background-color: #2D375F ;
+    color: #CCD4F5;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    transition: 0.4s ease-out;
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+} */
+
+.form-div4 {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-around;
+    /* padding: 0 20px; */
+    /* flex-wrap: nowrap; */
+    /* gap: 10px; */
+}
