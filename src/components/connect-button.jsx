@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 async function getAccount() {
   const accounts = await window.ethereum.request({
@@ -11,6 +12,7 @@ async function getAccount() {
 
 export default function ConnectButton() {
   const [accountAddress, setAccountAddress] = useState("");
+  const navigate = useNavigate();
 
   const connectButtonOnClick = () => {
     console.log(window);
@@ -19,7 +21,7 @@ export default function ConnectButton() {
       typeof window.ethereum !== "undefined"
     ) {
       getAccount().then((response) => {
-        setAccountAddress(response);
+        navigate("/form");
       });
     } else {
       console.log("error");
@@ -27,7 +29,10 @@ export default function ConnectButton() {
   };
 
   return (
-    <button onClick={connectButtonOnClick} className="bg-[#A5DFD5] text-[#282828] h-[2.5em] pl-[2em] pr-[2em] rounded-[10em] text-[16px] shadow-lg hover:bg-[#282828] hover:text-[#F4F1EE] transition ease-out delay-300 hover:translate-y-[-3px] last:mt-[2em]">
+    <button onClick={() =>{
+      connectButtonOnClick();
+    } 
+    } className="bg-[#A5DFD5] text-[#282828] h-[2.5em] pl-[2em] pr-[2em] rounded-[10em] text-[16px] shadow-lg hover:bg-[#282828] hover:text-[#F4F1EE] transition ease-out delay-300 hover:translate-y-[-3px] last:mt-[2em]">
       {!!accountAddress ? accountAddress : "Connect"}
     </button>
   );

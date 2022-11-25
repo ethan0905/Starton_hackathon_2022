@@ -1,5 +1,6 @@
 import ConnectButton from "../components/connect-button.jsx";
 import Logo from "../assets/PAYCONSENT.svg"
+import {useNavigate} from "react-router-dom"
 
 function MainPage() {
   return (

@@ -13,7 +13,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<MainPage/>}/>
           <Route path="/form" element={<FormPage/>}/>
-          <Route path="/summary/contracts/:contractaddress" element={<SummaryPage/>}/>
+          <Route path="/summary/:contractaddress" element={<SummaryPage/>}/>
         </Routes>
       </div>
   </Router>

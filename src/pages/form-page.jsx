@@ -5,6 +5,7 @@ import "../assets/css/summary-page.css";
 import Logo from "../assets/PAYCONSENT.svg"
 import axios from "axios";
 import FormData from "form-data";
+import { Navigate } from "react-router-dom";
 
 
 const starton = axios.create({
@@ -222,9 +223,8 @@ async function deployContract(type_creator_user, type_other_user, creator_user, 
 			String(other_user),
 			String(transactionAmount),
       [
-		String(urls[0]),
-		String(urls[1])
-      
+		    String(urls[0]),
+		    String(urls[1])
       ]
 		]},
     {
@@ -232,7 +232,10 @@ async function deployContract(type_creator_user, type_other_user, creator_user, 
         "x-api-key": "sk_live_89c7396e-c994-415e-9127-8bb3f7b8a7d4",
       }
     }
-  )}
+  )
+
+  console.log(res); 
+}
 
 function FormPage() {
 	const [contractInfo, setContractInfo] = useState({
@@ -262,7 +265,6 @@ function FormPage() {
     }
   };
 
-  console.log(contractInfo);
   return (
     <>
       <div>
