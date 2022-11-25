@@ -56,7 +56,7 @@ Our solution solve it by creating a form interface that write directly into our 
 `https://github.com/ethan0905/PAYCONSENT.git`  
   
 2. Run at the root of repository, the following bash commands:  
-`docker-compose up --build`
+`npm install && npm run dev`
   
 3. Then go to the following url on internet:  
 `localhost:3000`
