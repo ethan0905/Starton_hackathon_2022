@@ -52,7 +52,7 @@ Our solution solve it by creating a form interface that write directly into our 
 ## ⚙️ How to run the project ? 
   
 1. Clone the repository:  
-`https://github.com/ethan0905/hackathon_merge.git`  
+`https://github.com/ethan0905/PAYCONSENT.git`  
   
 2. Run at the root of repository, the following bash commands:  
 `docker-compose up --build`
