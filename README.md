@@ -83,11 +83,11 @@ Our solution solve it by creating a form interface that write directly into our 
 
 ## 🖥️ Development perspective
 
-Have a little check of the delivery service
-Create a DAO
-Create our coin, the more user is holding, the less the additionnal fees gonna be
-Holder of our coin will gonna get rewarded for voting in case of disagreement
-Add a service provider marketplace like malt
+- Have a little check of the delivery service
+- Create a DAO
+- Create our coin, the more user is holding, the less the additionnal fees gonna be
+- Holder of our coin will gonna get rewarded for voting in case of disagreement
+- Add a service provider marketplace like malt
 
 ## ⚠️ License
 Distributed under the MIT License. See `LICENSE.txt` for more information.  
