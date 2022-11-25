@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="readme/payconsent.png" alt="logo" width="200" height="auto" />
+  <img src="src/assets/images/Wireframe.png" alt="logo" width="400" height="auto" />
   <h1>PayConsent 🤝</h1>
   <p>A B2B payement protocol, secured using smartcontract</p>
 
