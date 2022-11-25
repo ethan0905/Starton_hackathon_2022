@@ -15,6 +15,8 @@ We thought that using blockchain technology to solve this problem was an interes
  - [❗ Problem](#-problem)
  - [✅ Solution](#-solution)
  - [⚙️ How to run the project ?](#%EF%B8%8F-how-to-run-the-project-)
+ - [🦶 Step to use Payconsent](%-step-to-use-payconsent)
+ - [💡 Technological invasion](%-technological-invasion)
  - [📈 Business model](#-business-model)
  - [🧭 Roadmap](#-roadmap)
  - [🖥️ Development perspective](#%EF%B8%8F-development-perspective)
@@ -64,7 +66,7 @@ Our solution solve it by creating a form interface that write directly into our 
 
 - Connect your wallet
 - Fill the form and upload the different file
-- Then let's start the mission ✔️
+- Start the mission ✔️
 
 ## 💡 Technological invasion
 
