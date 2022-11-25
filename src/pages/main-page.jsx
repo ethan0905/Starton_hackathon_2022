@@ -1,32 +1,25 @@
-import React from "react";
-import { Component } from "react";
 import ConnectButton from "../components/connect-button.jsx";
+import Logo from "../assets/PAYCONSENT.svg"
 
-import "../assets/css/home.css";
-
-class MainPage extends Component {
-  render() {
-    return (
-      <div class="w-screen h-screen">
-        <div>
-          <h1 class="logo-over-white">
-            PAYCONSENT<span class="dot-color">.</span>
-          </h1>
-        </div>
-        <div class="intro-div">
-          <h2 class="intro-title">
-            Giving You Solutions <br></br>For Smarter Contracts
-          </h2>
-          <quote class="intro-quote">
+function MainPage() {
+  return (
+    <div className="w-screen h-screen bg-[#f4f1ee] absolute flex flex-col">
+      <nav>
+        <img src={Logo} alt="Logo" className="h-[30px] ml-[80px] mt-[30px]"/>
+      </nav>
+      <main className='w-screen flex-grow flex flex-col justify-center items-center'>
+        <div className='text-center flex flex-col items-center max-w-[90%]'>
+          <h1 className='w-fit self-center text-3xl sm:text-5xl font-thunder'>Giving You Solutions <br></br>For Smarter Contracts</h1>
+          <p className='w-fit self-center text-xs sm:text-sm text-[#282828] font-inter'>
             Are you tired of complex and slow administration ? <br></br>Get your
             first decentralized contract, entirely <br></br>managed with
             blockchain technology
-          </quote>
-          <ConnectButton />
+          </p>
+          <ConnectButton/>
         </div>
-      </div>
-    );
-  }
+      </main>
+    </div>
+  )
 }
 
 export default MainPage;

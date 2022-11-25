@@ -1,7 +1,4 @@
 import { useState } from "react";
-import * as React from 'react';
-
-import "../assets/css/button.css"
 
 async function getAccount() {
   const accounts = await window.ethereum.request({
@@ -30,8 +27,8 @@ export default function ConnectButton() {
   };
 
   return (
-    <button onClick={connectButtonOnClick} className="btn-connexion">
-      {!!accountAddress ? accountAddress : "Connect Button"}
+    <button onClick={connectButtonOnClick} className="bg-[#A5DFD5] text-[#282828] h-[2.5em] pl-[2em] pr-[2em] rounded-[10em] text-[16px] shadow-lg hover:bg-[#282828] hover:text-[#F4F1EE] transition ease-out delay-300 hover:translate-y-[-3px] last:mt-[2em]">
+      {!!accountAddress ? accountAddress : "Connect"}
     </button>
   );
 }

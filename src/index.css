@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Inter';
+    src : url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap');
+}
+
+@font-face {
+    font-family: 'Thunder-ExtraBoldLC';
+    src: url('../fonts/Thunder-ExtraBoldLC.otf');
+}
