@@ -27,12 +27,19 @@ body {
 
 .form-div-total {
     display: flex;
+    /* flex-direction: column; */
+    gap: 10px;
+}
+
+.form-div {
+    display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
 .total-form {
     display: flex;
+    /* flex-direction: row; */
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -46,12 +53,14 @@ body {
 .green-line {
     background: #A5DFD5;
     width: 10px;
-    height: 300px;
+    height: 628px;
     border-radius: 8px;
 }
 
 .form-div1 {
     background: #ffffff;
+	box-shadow: 0 10px 20px rgb(0 0 0 / 5%);
+
     width: 100%;
     height: 160px;
     display: flex;
@@ -139,6 +148,8 @@ body {
 
 .form-div2 {
     background: #ffffff;
+	box-shadow: 0 10px 20px rgb(0 0 0 / 5%);
+
     width: 100%;
     height: 456px;
     display: flex;
@@ -259,5 +270,25 @@ body {
 
 .form-div3 {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
+}
+
+.id-metamask-form {
+    font-family: 'Intra';
+    font-weight: 400;
+	align-items: center;
+	background-color: #fff;
+	border-radius: 9999px;
+	box-shadow: 0 10px 20px rgb(0 0 0 / 5%);
+	color: #000;
+	display: flex;
+	font-size: 13px;
+	/* font-weight: 400; */
+	height: 36.05px;
+	letter-spacing: .6px;
+	min-height: 35px;
+	padding: 9px 16px;
+	width: 220px;
 }
