@@ -1,20 +1,20 @@
 <div align="center">
 
-  <img src="readme/payconsent.png" alt="logo" width="200" height="auto" />
-  <h1>PayConsent 🤝</h1>
-  <p>A B2B payement protocol, secured using smartcontract</p>
+  <img src="src/assets/images/Wireframe.png" alt="logo" width="500" height="auto" />
 
 </div>
 
 ## 🤏 Pitch
 We are 4 students from 42 school and we have been experiencing issues with our client payement (deadline, terms of contract, ...).  
-We thought that using blockchain technology to solve this problem was an interesting idea.  
+In order to solve this problem, using Blockchain technology is interesting. 
  
 ## 📔 Summary
 
  - [❗ Problem](#-problem)
  - [✅ Solution](#-solution)
  - [⚙️ How to run the project ?](#%EF%B8%8F-how-to-run-the-project-)
+ - [🦶 Step to use Payconsent](%-step-to-use-payconsent)
+ - [💡 Technological invasion](%-technological-invasion)
  - [📈 Business model](#-business-model)
  - [🧭 Roadmap](#-roadmap)
  - [🖥️ Development perspective](#%EF%B8%8F-development-perspective)
@@ -52,7 +52,7 @@ Our solution solve it by creating a form interface that write directly into our 
 ## ⚙️ How to run the project ? 
   
 1. Clone the repository:  
-`https://github.com/ethan0905/hackathon_merge.git`  
+`https://github.com/ethan0905/PAYCONSENT.git`  
   
 2. Run at the root of repository, the following bash commands:  
 `docker-compose up --build`
@@ -64,7 +64,7 @@ Our solution solve it by creating a form interface that write directly into our 
 
 - Connect your wallet
 - Fill the form and upload the different file
-- Then let's start the mission ✔️
+- Start the mission ✔️
 
 ## 💡 Technological invasion
 
