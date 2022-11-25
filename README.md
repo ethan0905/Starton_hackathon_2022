@@ -58,31 +58,36 @@ Our solution solve it by creating a form interface that write directly into our 
 `docker-compose up --build`
   
 3. Then go to the following url on internet:  
-`localhost:3000`  
-  
+`localhost:3000`
+
+## 🦶 Step to use Payconsent
+
+- Connect your wallet
+- Fill the form and upload the different file
+- Then let's start the mission ✔️
+
+## 💡 Technological invasion
+
+- The contract will be unique with the smart contract
+- The file will be storage with ipfs (no centralized data)
+
 ## 📈 Business model
 
-For each contract, we take a pourcentage of the total amount (6%)  
-
-pas besoin de bcp de personnes (peu couteux)  
-ajout differents type de contracts -> toucher une plus grande audience  
-
-## 🧭 Roadmap
-
-- [x] Docker installation
-- [x] Metamask wallet connection
-- [ ] Smart contract
-    - [x] Write our own contract
-    - [ ] Use of Starton API to create Smart contract from bytecode
-    - [ ] Use of Starton API to calls Smart contract located at {address} on {network}
-    - [ ] Deletes Smart contract located at {address} on {network}
-- [x] Add image uploader on IPFS
-- [ ] Form:
-    - [ ] Interaction with Smart contract at {address} on {network}
+- For each contract, we take a pourcentage of the total amount (6% for services)
+- Create a coin and add staking during the mission
+- Add different type of contract
+- We just need a team with several developper
+- A contract less than 100$ will be free to attract some users
+- With a DAO, we didn't a huge fund rising 
 
 ## 🖥️ Development perspective
-Create a DAO,  
-Create our coin, the more user is holding, the less the additionnal fees gonna be 
+
+- Have a little check of the delivery service
+- Create a DAO
+- Create our coin, the more user is holding, the less the additionnal fees gonna be
+- Holder of our coin will gonna get rewarded for voting in case of disagreement
+- Add a service provider marketplace like malt
+- Create a certification after an amount of contract validate
 
 ## ⚠️ License
 Distributed under the MIT License. See `LICENSE.txt` for more information.  
