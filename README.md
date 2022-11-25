@@ -62,10 +62,9 @@ Our solution solve it by creating a form interface that write directly into our 
 
 ## 🦶 Step to use Payconsent
 
-- Fill the form
-- Upload the different file
-- Enter the amount and pay
-- Them let's start the mission ✔️
+- Connect your wallet
+- Fill the form and upload the different file
+- Then let's start the mission ✔️
 
 ## 💡 Technological invasion
 
@@ -88,6 +87,7 @@ Our solution solve it by creating a form interface that write directly into our 
 - Create our coin, the more user is holding, the less the additionnal fees gonna be
 - Holder of our coin will gonna get rewarded for voting in case of disagreement
 - Add a service provider marketplace like malt
+- Create a certification after an amount of contract validate
 
 ## ⚠️ License
 Distributed under the MIT License. See `LICENSE.txt` for more information.  
