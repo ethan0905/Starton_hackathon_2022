@@ -10,8 +10,8 @@ function MainPage() {
         <img src={Logo} alt="Logo" className="h-[30px] ml-[80px] mt-[30px]" />
       </nav>
       {/* <div className="flex flex-row justify-center"> */}
-      <main className="absolute bottom-1.5  w-screen flex-grow flex flex-start justify-center items-center">
-        <div className="relative z-50 text-align-left flex flex-col items-start max-w-[90%] left-20">
+      <main className="absolute bottom-1.5 top-2 w-screen flex-grow flex flex-start justify-center items-center">
+        <div className="absolute z-50 text-align-left flex flex-col items-start max-w-[90%] left-40">
           <h1 className="w-fit self-center text-3xl sm:text-8xl font-thunder">
             Giving You Solutions <br></br>For Smarter Contracts
           </h1>
@@ -22,8 +22,8 @@ function MainPage() {
           </p>
           <ConnectButton />
         </div>
-        <div ClassName="absolute z-0 ">
-          <img src={abstract}></img>
+        <div className="absolute z-0 right-12">
+          <img src={abstract} className="h-[1120px]"></img>
         </div>
       </main>
       {/* </div> */}
