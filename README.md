@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="src/assets/images/Wireframe.png" alt="logo" width="500" height="auto" />
+  <img src="src/assets/images/Wireframe.png" alt="logo" width="400" height="auto" />
 
 </div>
 
@@ -16,7 +16,6 @@ In order to solve this problem, using Blockchain technology is interesting.
  - [🦶 Step to use Payconsent](%-step-to-use-payconsent)
  - [💡 Technological invasion](%-technological-invasion)
  - [📈 Business model](#-business-model)
- - [🧭 Roadmap](#-roadmap)
  - [🖥️ Development perspective](#%EF%B8%8F-development-perspective)
  - [⚠️ License](#%EF%B8%8F-license)
  - [⚠️ Video](#video)
@@ -43,7 +42,7 @@ We create a climate of trust for every users (Open Trust Framework Model).
 - Figma to design and prototype the website  
 - Trello to manage the project development  
 - TailwindCSS and ReactJS for frontend and backend  
-- Starton API for the smart contracts managements
+- Starton API for the smart contracts managements and ipfs file upload
 - IPFS for the decentralised datastorage  
   
 #### What was your biggest technical challenge and how does your solution solve it?
