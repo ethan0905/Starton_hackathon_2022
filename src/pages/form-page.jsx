@@ -241,7 +241,7 @@ function FormPage() {
 	const [contractInfo, setContractInfo] = useState({
 		dest: "",
 		amount:"",
-    type_user:2,
+    	type_user:2,
 	});
   let urls = [];
 
@@ -293,8 +293,8 @@ function FormPage() {
                     <option value="2" disabled>
                       Status
                     </option>
-                    <option value="0">Buyer</option>
-                    <option value="1">Seller</option>
+                    <option value="0">Customer</option>
+                    <option value="1">Service Provider</option>
                   </select>
                 </div>
               </div>
@@ -346,13 +346,13 @@ function FormPage() {
                   <label className="status-title">
                     Sending To
                   </label>
-                  <p className="text-[13px]">The receiver</p>
+                  <p className="text-[13px]">The receiver's wallet adress</p>
                 </div>
                 <div className="select-box-div">
                   <input
                     className="select-box"
                     id="exampleInput8"
-                    placeholder="Enter the receiver's wallet ID"
+                    placeholder="0x659fc9b0e47d717f78..."
                     onChange={handleChange}
                     value={contractInfo.dest} name="dest"
                   />
