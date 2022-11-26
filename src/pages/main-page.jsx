@@ -2,6 +2,7 @@ import ConnectButton from "../components/connect-button.jsx";
 import Logo from "../assets/PAYCONSENT.svg";
 import { useNavigate } from "react-router-dom";
 import abstract from "../assets/images/Abstract-design.png";
+import abstractV2 from "../assets/images/Abstract-v2.png";
 
 function MainPage() {
   return (
@@ -22,8 +23,9 @@ function MainPage() {
           </p>
           <ConnectButton />
         </div>
-        <div className="absolute z-0 right-12">
-          <img src={abstract} className="h-[1120px]"></img>
+        <div className="absolute z-0 right-12 w-[1300px] flex justify-center">
+          {/* <img src={abstract} className="h-[1120px]"></img> */}
+          <img src={abstractV2} className="w-screen"></img>
         </div>
       </main>
       {/* </div> */}

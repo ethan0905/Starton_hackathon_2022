@@ -33,7 +33,7 @@ export default function ConnectButton() {
       connectButtonOnClick();
     } 
     } className="bg-[#A5DFD5] text-[#282828] h-[2.5em] font-bold pl-[2em] pr-[2em] rounded-[10em] text-[16px] shadow-lg hover:bg-[#282828] hover:text-[#F4F1EE] transition ease-out delay-300 hover:translate-y-[-3px] last:mt-[2em]">
-      {!!accountAddress ? accountAddress : "Connect"}
+      {!!accountAddress ? accountAddress : "Connect Wallet"}
     </button>
   );
 }

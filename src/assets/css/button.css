@@ -12,7 +12,7 @@
     padding-right: 2em;
 }
 
-.form-div3 .btn-status-pending {
+.form-div1 .btn-status-pending {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,7 @@
 
 }
 
-.form-div3 .btn-status-claimed {
+.form-div1 .btn-status-claimed {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +44,7 @@
     width: 10em;
 }
 
-.form-div3 .btn-status-progress {
+.form-div1 .btn-status-progress {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,6 +71,29 @@
     max-height: 2.5em;
     padding-left: 2em;
     padding-right: 2em;
+}
+
+.btn-confirmation {
+    background-color: #282828 ; 
+    color: #F4F1EE;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 10rem;
+    min-height: 2.5em;
+    max-height: 2.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.btn-confirmation:hover {
+    background-color: #A5DFD5 ;
+    color: #282828;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    transition: 0.4s ease-out;
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* .btn-connexion2 {
