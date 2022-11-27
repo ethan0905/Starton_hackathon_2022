@@ -6,7 +6,7 @@
 
 ## 🤏 Pitch
 We are 4 students from 42 school and we have been experiencing issues with our client payement (deadline, terms of contract, ...).  
-In order to solve this problem, using Blockchain technology is interesting. 
+We used blockchain technology to solve this problem. 
  
 ## 📔 Summary
 
@@ -18,7 +18,7 @@ In order to solve this problem, using Blockchain technology is interesting.
  - [📈 Business model](#-business-model)
  - [🖥️ Development perspective](#%EF%B8%8F-development-perspective)
  - [⚠️ License](#%EF%B8%8F-license)
- - [⚠️ Video](#video)
+ - [🎥 Video](#video)
   
 ## ❗ Problem
 #### What problem does your project solve? 
