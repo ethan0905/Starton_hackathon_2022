@@ -393,6 +393,7 @@ function ButtonStep({user_type, status_os, statusContract, amount, contractaddre
 function SummaryPage() {
   const { address, isConnected } = useAccount();
   const params = useParams();
+  const [view, setView] = useState(false);
   const [infoUser, setInfoUser] = useState([]);
   const [infoGlob, setInfoGlob] = useState([]);
   const [infoOU, setInfoOU] = useState([]);
@@ -430,7 +431,11 @@ function SummaryPage() {
   }
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setView(true);
+    }, 5000);
     getInfo(params.contractaddress, address);
+    return () => clearTimeout(timer);
   },[params.contractaddress, address])
 
   return (
