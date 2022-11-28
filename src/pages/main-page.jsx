@@ -5,8 +5,9 @@ import abstractV2 from "../assets/images/Abstract-v2.png";
 function MainPage() {
   return (
     <div>
-      <nav>
-        <img src={Logo} alt="Logo" className="h-[30px] ml-[80px] mt-[30px]" />
+      <nav className="flex flex-row justify-between align-center mt-[4vh] ml-[8vw] mr-[8vw]">
+        <img src={Logo} alt="Logo"/>
+		    <button className="btn-confirmation">Connect Wallet</button>
       </nav>
       <div className="relative h-[92.4vh] left-[5vh] overflow-hidden flex flex-row content-center justify-between items-center flex-nowrap">
         <div className="absolute left-[10vw]">

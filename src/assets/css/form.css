@@ -57,11 +57,34 @@ body {
     border-radius: 8px;
 }
 
+.green-line-2 {
+    background: #A5DFD5;
+    width: 10px;
+    height: 162px;
+    border-radius: 8px;
+}
+
 .form-div1 {
     background: #ffffff;
     box-shadow: 0 10px 20px rgb(0 0 0 / 5%);
 
     width: 100%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: flex-start; */
+    justify-content: space-around;
+    /* border-top-right-radius: 20px; */
+    border-radius: 0 20px 0 0;
+    padding: 20px;
+}
+
+.form-div5 {
+    background: #ffffff;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 5%);
+
+    width: 45vw;
     height: 160px;
     display: flex;
     flex-direction: column;
@@ -110,6 +133,18 @@ body {
 .select-box {
     display: flex;
     width: 219px;
+    height: 33px;
+    border-radius: 5px;
+    padding-right: 5px;
+    border: 1px solid #e6e6e6;
+    font-family: 'Inter';
+    font-size: 13px;
+    padding: 5px;
+}
+
+.select-box-access {
+    display: flex;
+    width: 30vw;
     height: 33px;
     border-radius: 5px;
     padding-right: 5px;

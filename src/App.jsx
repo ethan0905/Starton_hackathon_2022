@@ -1,6 +1,8 @@
 import './App.css'
 
 import MainPage from './pages/main-page';
+import MainPageConnected from './pages/main-page-connected';
+import AccessContract from './pages/access-contract';
 import FormPage from './pages/form-page';
 import SummaryPage from './pages/summary-page';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -42,6 +44,8 @@ export default function App() {
         <div>
           <Routes>
             <Route path="/" element={<MainPage/>}/>
+            <Route path="/connected" element={<MainPageConnected/>}/>
+            <Route path="/access" element={<AccessContract/>}/>
             <Route path="/form" element={<FormPage/>}/>
             <Route path="/summary/:contractaddress" element={<SummaryPage/>}/>
           </Routes>

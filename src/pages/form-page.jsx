@@ -243,9 +243,28 @@ function FormPage() {
   console.log(urls);
   return (
     <>
-      <div>
-        <img src={Logo} alt="Logo" className="h-[30px] ml-[80px] mt-[30px]"/>
-      </div>
+	<div>
+		<nav className="flex flex-row justify-between align-center mt-[4vh] ml-[8vw] mr-[8vw]">
+        	<img src={Logo} onClick={() => navigate('/connected')} alt="Logo"/>
+        	<div className="select-box-div">
+                  <div className="wallet-id-total">
+                    <div className="wallet-id-section">
+                      <div className="id-metamask-form">
+                        <i className="fas fa-hashtag"></i>
+                        <strong className="id-name">{address}</strong>
+                        <i
+                          style={{ cursor: "pointer", marginLeft: 2 }}
+                          onClick={() => {
+                            navigator.clipboard.writeText(address);
+                          }}
+                          className="far fa-clone"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+	  </nav>
+	</div>
       <div className="total-form">
         <form className="form-div-total" onSubmit={handleSubmit}>
           <div className="green-line"></div>
@@ -372,9 +391,9 @@ function FormPage() {
             </div>
             <div className="form-div3">
               <div>
-                <button className="text-[13px]" type="dismiss">
-                  Dismiss
-                </button>
+				<div className="bg-red-300 pl-3 pr-3 pt-1 pb-1 rounded-[6px]">
+					<i className="fa-solid fa-xmark"></i>
+				</div>
               </div>
               <div>
                 <button className="btn-connexion"

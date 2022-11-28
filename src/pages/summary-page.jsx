@@ -398,6 +398,8 @@ function SummaryPage() {
   const [infoGlob, setInfoGlob] = useState([]);
   const [infoOU, setInfoOU] = useState([]);
 
+  const navigate = useNavigate();
+
   async function getInfo(contractaddress, account){
     console.log(contractaddress, account);
     const res = await starton.post("/smart-contract/polygon-mumbai/"+params.contractaddress+"/read",{
@@ -439,20 +441,41 @@ function SummaryPage() {
   },[params.contractaddress, address])
 
   return (
+    <>
+      <nav className="flex flex-row justify-between align-center mt-[4vh] ml-[8vw] mr-[8vw]">
+        <img src={Logo} onClick={() => navigate('/connected')} alt="Logo"/>
+        <div className="select-box-div">
+                  <div className="wallet-id-total">
+                    <div className="wallet-id-section">
+                      <div className="id-metamask-form">
+                        <i className="fas fa-hashtag"></i>
+                        <strong className="id-name">{address}</strong>
+                        <i
+                          style={{ cursor: "pointer", marginLeft: 2 }}
+                          onClick={() => {
+                            navigator.clipboard.writeText(address);
+                          }}
+                          className="far fa-clone"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+	    </nav>
     <div className="w-full h-auto overflow-scroll block h-screen background p-4 flex items-center justify-center">
       <p>{params.contractaddress}</p>
       {/* <div className="flex items-center justify-center flex-col ">
           <div className="sm:text-3xl text-2xl font-semibold text-center text-sky-600 mb-12">
-            Transaction Summary
+          Transaction Summary
           </div>
           <div className="box-summary py-6 px-10 sm:max-w-md w-full ">
-            <div className="flex items-center justify-center flex-col">
-              <div className="sm:text-2xl text-xl font-semibold text-center text-gray-900 mb-12">
-                <p>file uploaded: {json.ipfs.file}</p>
-                <p>address: {json.data.address}</p>
-                <p>price: {json.data.price} BNB</p>
-              </div>
-            </div>
+          <div className="flex items-center justify-center flex-col">
+          <div className="sm:text-2xl text-xl font-semibold text-center text-gray-900 mb-12">
+          <p>file uploaded: {json.ipfs.file}</p>
+          <p>address: {json.data.address}</p>
+          <p>price: {json.data.price} BNB</p>
+          </div>
+          </div>
           </div>
         </div> */}
 
@@ -484,7 +507,7 @@ function SummaryPage() {
                           navigator.clipboard.writeText("https://payconsent.com/summary/"+ params.contractaddress);
                         }}
                         className="far fa-clone"
-                      ></i>
+                        ></i>
                     </div>
                   </div>
                 </div>
@@ -511,7 +534,7 @@ function SummaryPage() {
                           navigator.clipboard.writeText(address);
                         }}
                         className="far fa-clone"
-                      ></i>
+                        ></i>
                     </div>
                     <div className="id-metamask">
                       <i class="fas fa-hashtag"></i>
@@ -522,7 +545,7 @@ function SummaryPage() {
                           navigator.clipboard.writeText(user.id_metamask);
                         }}
                         className="far fa-clone"
-                      ></i>
+                        ></i>
                     </div>
                   </div>
                 </div>
@@ -560,25 +583,25 @@ function SummaryPage() {
 
               {/* <div className="contract-div">
                   <div className="label-status">
-                    <p class="status-title">File 2</p>
-                    <p className="text-[13px]">IPFS link</p>
+                  <p class="status-title">File 2</p>
+                  <p className="text-[13px]">IPFS link</p>
                   </div>
                   <div className="wallet-id-total">
-
-                    <div class="wallet-id-section">
-                      <div className="id-metamask">
-                        <i class="fas fa-hashtag"></i>
-                        <strong className="id-name">{json.data.address}</strong>
-                        <i
-                          style={{ cursor: "pointer", marginLeft: 2 }}
-                          onClick={() => {
-                            navigator.clipboard.writeText(json.data.address);
-                          }}
-                          className="far fa-clone"
-                        ></i>
-                      </div>
-                     
-                    </div>
+                  
+                  <div class="wallet-id-section">
+                  <div className="id-metamask">
+                  <i class="fas fa-hashtag"></i>
+                  <strong className="id-name">{json.data.address}</strong>
+                  <i
+                  style={{ cursor: "pointer", marginLeft: 2 }}
+                  onClick={() => {
+                    navigator.clipboard.writeText(json.data.address);
+                  }}
+                  className="far fa-clone"
+                  ></i>
+                  </div>
+                  
+                  </div>
                   </div>
                 </div> */}
 
@@ -588,153 +611,20 @@ function SummaryPage() {
             </div>
             <div className="form-div3">
               <div>
-                <button className="text-[13px]" type="cancel">
-                  Cancel
-                </button>
+                <div className="bg-red-300 pl-3 pr-3 pt-1 pb-1 rounded-[6px]">
+                  <i className="fa-solid fa-xmark"></i>
+                </div>
               </div>
               <div>
                 <ButtonStep statusContract={infoGlob[2]} user_type={infoUser[0]} status_os={infoUser[3]} amount={infoGlob[1]} contractaddress={params.contractaddress} account={address}></ButtonStep>
-                {/* <button className="btn-confirmation" user_type={infoUser[1]} statusContract={statusContract} status_user={infoUser[2]} amount={amount}>Confirm Contract</button> */}
               </div>
-              {/* <div>
-                  <div class="btn-status-confirmed" type="submit">
-                    Confirmed
-                  </div>
-                </div> */}
             </div>
           </div>
         </div>
       </div>
     </div>
+  </>
   );
 }
 
 export default SummaryPage;
-
-// function SummaryPage(){
-//   // let params = useParams();
-
-//   return (
-//     <div className="w-full h-auto overflow-scroll block h-screen background p-4 flex items-center justify-center">
-//       <div className="w-screen ml-[64px] mt-[14px]">
-//         <img src={Logo} alt="Logo" className="h-[30px]"/>
-//         <p>0xb12312317412409938571</p>
-//       </div>
-//       {/* <div className="flex items-center justify-center flex-col ">
-//         <div className="sm:text-3xl text-2xl font-semibold text-center text-sky-600 mb-12">
-//           Transaction Summary
-//         </div>
-//         <div className="box-summary py-6 px-10 sm:max-w-md w-full ">
-//           <div className="flex items-center justify-center flex-col">
-//             <div className="sm:text-2xl text-xl font-semibold text-center text-gray-900 mb-12">
-//               <p>file uploaded: {json.ipfs.file}</p>
-//               <p>address: {json.data.address}</p>
-//               <p>price: {json.data.price} BNB</p>
-//             </div>
-//           </div>
-//         </div>
-//       </div> */}
-
-//       <div className="total-form">
-//         <div className="form-div-total">
-//           <div className="green-line-summary"></div>
-
-//           {/* <div className="green-line"></div> */}
-//           <div className="form-div">
-//             <div className="form-div1">
-//               <div className="title-form">
-//                 <h1>Summary</h1>
-//               </div>
-//               <div className="contract-div">
-//                 <div className="label-status">
-//                   <p class="status-title">Contract ID</p>
-//                 </div>
-//                 <div className="wallet-id-total">
-//                   <div class="wallet-id-section">
-//                     <div className="id-metamask">
-//                       <i class="fas fa-hashtag"></i>
-//                       <strong className="id-name">{json.ipfs.file}</strong>
-//                       <i
-//                         style={{ cursor: "pointer", marginLeft: 2 }}
-//                         onClick={() => {
-//                           navigator.clipboard.writeText(json.ipfs.file);
-//                         }}
-//                         className="far fa-clone"
-//                       ></i>
-//                     </div>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-
-//             <div className="form-div1-2">
-//               <div className="contract-div">
-//                 <div className="label-status">
-//                   <p class="status-title">Between</p>
-//                   <p className="text-[13px]">The creator of this contract</p>
-//                 </div>
-//                 <div className="wallet-id-total">
-//                   <div>
-//                     <i class="fa-solid fa-arrows-rotate"></i>
-//                   </div>
-//                   <div class="wallet-id-section">
-//                     <div className="id-metamask">
-//                       <i class="fas fa-hashtag"></i>
-//                       <strong className="id-name">{json.data.address}</strong>
-//                       <i
-//                         style={{ cursor: "pointer", marginLeft: 2 }}
-//                         onClick={() => {
-//                           navigator.clipboard.writeText(json.data.address);
-//                         }}
-//                         className="far fa-clone"
-//                       ></i>
-//                     </div>
-//                     <div className="id-metamask">
-//                       <i class="fas fa-hashtag"></i>
-//                       <strong className="id-name">{json.data.address}</strong>
-//                       <i
-//                         style={{ cursor: "pointer", marginLeft: 2 }}
-//                         onClick={() => {
-//                           navigator.clipboard.writeText(user.id_metamask);
-//                         }}
-//                         className="far fa-clone"
-//                       ></i>
-//                     </div>
-//                   </div>
-//                 </div>
-//               </div>
-
-//               <div>
-//                 <div className="contract-div">
-//                   <div className="label-status">
-//                     <p class="status-title">Price</p>
-//                   </div>
-//                   <div className="wallet-id-total">
-//                     <p className="bnb-tag">
-//                       <span className="text-[20px]">{json.data.price}</span>{" "}
-//                       BNB
-//                     </p>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-//             <div className="form-div3">
-//               <div>
-//                 <button className="text-[13px]" type="cancel">
-//                   Cancel
-//                 </button>
-//               </div>
-//               <div>
-//                 <div class="btn-status-pending" type="submit" /*onClick={() => getInfo(params.params)}*/>
-//                   Pending
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default SummaryPage;
