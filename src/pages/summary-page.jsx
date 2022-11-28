@@ -8,6 +8,7 @@ import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { useAccount} from 'wagmi';
 import { useContractWrite , usePrepareContractWrite} from 'wagmi'
 // import { useParams } from "react-router-dom";
+import { ethers } from "ethers";
 
 const json = {
   data: {
@@ -37,7 +38,7 @@ function StatusContract({status}){
   else if (status == 1){
     return (
       <div class="btn-status-progress" type="submit">
-        Completed
+        Signed
       </div>    
     );
   }
@@ -51,7 +52,7 @@ function StatusContract({status}){
   else{
     return (
       <div class="btn-status-progress" type="submit">
-        Completed
+        Unknown
       </div>    
     );
   }
@@ -66,7 +67,7 @@ function Balance({status_contract, user_type, amount}){
         </div>
         <div className="wallet-id-total">
           <p className="bnb-tag">
-            <span className="text-[20px]">{amount}</span> MATIC
+            <span className="text-[20px]">{ethers.utils.formatEther(amount)}</span> MATIC
           </p>
         </div>
       </div>
@@ -80,7 +81,7 @@ function Balance({status_contract, user_type, amount}){
         </div>
         <div className="wallet-id-total">
           <p className="bnb-tag">
-            <span className="text-[20px]">{amount}</span> MATIC
+            <span className="text-[20px]">{ethers.utils.formatEther(amount)}</span> MATIC
           </p>
         </div>
       </div>
@@ -93,7 +94,7 @@ function Balance({status_contract, user_type, amount}){
         </div>
         <div className="wallet-id-total">
           <p className="bnb-tag">
-            <span className="text-[20px]">{amount}</span> MATIC
+            <span className="text-[20px]">{ethers.utils.formatEther(amount)}</span> MATIC
           </p>
         </div>
       </div>
@@ -105,7 +106,7 @@ function Balance({status_contract, user_type, amount}){
       </div>
       <div className="wallet-id-total">
         <p className="bnb-tag">
-          <span className="text-[20px]">{amount}</span> MATIC
+          <span className="text-[20px]">{ethers.utils.formatEther(amount)}</span> MATIC
         </p>
       </div>
     </div>
