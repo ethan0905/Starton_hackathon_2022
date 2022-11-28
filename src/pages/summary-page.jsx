@@ -4,8 +4,9 @@ import Logo from "../assets/PAYCONSENT.svg";
 import axios from "axios";
 import "../assets/css/summary-page.css";
 import "../assets/css/form.css";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { useAccount} from 'wagmi';
+import { useContractWrite , usePrepareContractWrite} from 'wagmi'
 // import { useParams } from "react-router-dom";
 
 const json = {
@@ -111,7 +112,245 @@ function Balance({status_contract, user_type, amount}){
   }
 }
 
-function ButtonStep({user_type, status_os, statusContract}){
+const abi_test = [
+	{
+		"inputs": [
+			{
+				"internalType": "enum PayConsent.user_type",
+				"name": "t_creator_user",
+				"type": "uint8"
+			},
+			{
+				"internalType": "enum PayConsent.user_type",
+				"name": "t_other_user",
+				"type": "uint8"
+			},
+			{
+				"internalType": "address",
+				"name": "creator_user",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "other_user",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_transactionAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string[]",
+				"name": "_urls",
+				"type": "string[]"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_pers",
+				"type": "address"
+			}
+		],
+		"name": "ClaimMoney",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_pers",
+				"type": "address"
+			}
+		],
+		"name": "ValidateContract",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getInfoGlobal",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "enum PayConsent.status",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_pers",
+				"type": "address"
+			}
+		],
+		"name": "getInfoUser",
+		"outputs": [
+			{
+				"internalType": "enum PayConsent.user_type",
+				"name": "",
+				"type": "uint8"
+			},
+			{
+				"internalType": "enum PayConsent.status",
+				"name": "",
+				"type": "uint8"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "enum PayConsent.status",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_pers",
+				"type": "address"
+			}
+		],
+		"name": "payAndSign",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_pers",
+				"type": "address"
+			}
+		],
+		"name": "signContract",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+];
+
+async function sign(account, contractaddress){
+  console.log(account);
+  const res = await starton.post("/smart-contract/polygon-mumbai/"+contractaddress+"/call",{
+    functionName :"signContract",
+    signerWallet: "0xf9537238c56cDb32Ef62a8aed2cA8d9d6253efBf",
+    params: [
+      String(account),
+    ],
+    speed: "average",
+  },
+  ).then((response)=> {
+    if (response.status == 201)
+      window.location.reload(false);
+  });
+}
+
+function PayAndSign({account, amount, contractaddress}){
+  const { config } = usePrepareContractWrite({
+    address: contractaddress,
+    abi: abi_test,
+    functionName: 'payAndSign',
+    args:[account],
+    overrides: {
+      from: String(account),
+      value: amount,
+    },
+  });
+  const { data, isLoading, isSuccess, write } = useContractWrite(config);
+ 
+  if (isSuccess){
+    window.location.reload(false);
+  }
+  return (
+    <button className="btn-confirmation" disabled={!write} onClick={() => {
+      if (!isLoading && !isSuccess)
+        write();
+    }}>{isLoading ? 'Loading...' : 'Pay And Sign'}</button>
+  );
+}
+
+function Validate({account, contractaddress}){
+  const { config } = usePrepareContractWrite({
+    address: contractaddress,
+    abi: abi_test,
+    functionName: 'ValidateContract',
+    args:[account],
+    overrides: {
+      from: String(account),
+    },
+  });
+  const { data, isLoading, isSuccess, write } = useContractWrite(config);
+ 
+  if (isSuccess){
+    window.location.reload(false);
+  }
+  console.log(account);
+  return (
+    <button className="btn-confirmation" disabled={!write} onClick={() => {
+      if (!isLoading && !isSuccess)
+        write();
+    }}>{isLoading ? 'Loading...' : 'Validate'}</button>
+  );
+}
+
+function Claim({account, contractaddress, amount}){
+  const navigate = useNavigate();
+  const { config } = usePrepareContractWrite({
+    address: contractaddress,
+    abi: abi_test,
+    functionName: 'ClaimMoney',
+    args:[account],
+    overrides: {
+      from: String(account),
+      value: amount,
+    },
+  });
+  const { data, isLoading, isSuccess, write } = useContractWrite(config);
+ 
+  if (isSuccess){
+    navigate("/");
+  }
+  console.log(account);
+  return (
+    <button className="btn-confirmation" disabled={!write} onClick={() => {
+      if (!isLoading && !isSuccess)
+        write();
+    }}>{isLoading ? 'Loading...' : 'Get Money'}</button>
+  );
+}
+
+function ButtonStep({user_type, status_os, statusContract, amount, contractaddress, account}){
   console.log(user_type, status_os, statusContract);
   if (user_type == 0 && statusContract == 0 && status_os == 0){
     return (
@@ -120,12 +359,13 @@ function ButtonStep({user_type, status_os, statusContract}){
   }
   else if (user_type == 0 && statusContract == 0 && status_os == 1){
     return (
-      <button className="btn-confirmation">Pay And Sign</button>
+      <PayAndSign account={account} contractaddress={contractaddress} amount={amount}></PayAndSign>
+      // <button className="btn-confirmation" onClick={() => payAndSign(account, amount, contractaddress)}>Pay And Sign</button>
     );
   }
   else if (user_type == 1 && statusContract == 0 && status_os == 0){
     return (
-      <button className="btn-confirmation">Sign</button>
+      <button className="btn-confirmation" onClick={() => sign(account, contractaddress)}>Sign</button>
     );
   }
   else if (user_type == 1 && statusContract == 0 && status_os == 1){
@@ -135,33 +375,50 @@ function ButtonStep({user_type, status_os, statusContract}){
   }
   else if (statusContract == 1){
     return (
-      <button className="btn-confirmation">Validate</button>
+      <Validate account={account} contractaddress={contractaddress}></Validate>
+    );
+  }
+  else if (statusContract == 2 && user_type == 0){
+    return (
+      <button className="btn-confirmation">CONTRACT COMPLETE</button>
+    );
+  }
+  else if (statusContract == 2 && user_type == 1){
+    return (
+      <Claim account={account} contractaddress={contractaddress} amount={amount}></Claim>
     );
   }
 }
 
 function SummaryPage() {
   const { address, isConnected } = useAccount();
-  // const params = useParams();
-  const contractAddress = "0x5a5F706f7Ba2D71e35fb54d1CCBD3993143101d2";
+  const params = useParams();
   const [infoUser, setInfoUser] = useState([]);
   const [infoGlob, setInfoGlob] = useState([]);
-  const [OS, setOS] = useState();
-  const [amount, setAmount] = useState(0);
-  const [statusContract,setStatusContract] = useState(3);
+  const [infoOU, setInfoOU] = useState([]);
 
   async function getInfo(contractaddress, account){
-    const res = await starton.post("/smart-contract/polygon-mumbai/"+contractaddress+"/read",{
+    console.log(contractaddress, account);
+    const res = await starton.post("/smart-contract/polygon-mumbai/"+params.contractaddress+"/read",{
       functionName :"getInfoUser",
       params: [
         String(account),
       ],
     },
-    ).then((response)=> {
+    ).then(async (response)=> {
       setInfoUser(response.data.response);
+        const res3 = await starton.post("/smart-contract/polygon-mumbai/"+params.contractaddress+"/read",{
+          functionName :"getInfoUser",
+          params: [
+            String(response.data.response[2]),
+          ],
+        },
+        ).then((response)=> {
+          setInfoOU(response.data.response);
+        });
     });
   
-    const res2 = await starton.post("/smart-contract/polygon-mumbai/"+contractaddress+"/read",{
+    const res2 = await starton.post("/smart-contract/polygon-mumbai/"+params.contractaddress+"/read",{
       functionName :"getInfoGlobal",
       params: [
       ],
@@ -169,40 +426,16 @@ function SummaryPage() {
     ).then((response)=> {
       setInfoGlob(response.data.response);
     });
-    const res3 = await starton.post("/smart-contract/polygon-mumbai/"+contractaddress+"/read",{
-      functionName :"getInfoOtherSide",
-      params: [
-        String(account),
-      ],
-    },
-    ).then((response)=> {
-      setOS(response.data.response);
-    });
-    const res4 = await starton.post("/smart-contract/polygon-mumbai/"+contractaddress+"/read",{
-      functionName :"getAmountTransaction",
-      params: [
-      ],
-    },
-    ).then((response)=> {
-      setAmount(response.data.response);
-    });
-    const res5 = await starton.post("/smart-contract/polygon-mumbai/"+contractaddress+"/read",{
-      functionName :"getStatusContract",
-      params: [
-      ],
-    },
-    ).then((response)=> {
-      setStatusContract(response.data.response);
-    });
+
   }
 
   useEffect(() => {
-    getInfo(contractAddress, address);
-  },[contractAddress, address])
+    getInfo(params.contractaddress, address);
+  },[params.contractaddress, address])
 
   return (
     <div className="w-full h-auto overflow-scroll block h-screen background p-4 flex items-center justify-center">
-      <p>{contractAddress}</p>
+      <p>{params.contractaddress}</p>
       {/* <div className="flex items-center justify-center flex-col ">
           <div className="sm:text-3xl text-2xl font-semibold text-center text-sky-600 mb-12">
             Transaction Summary
@@ -228,7 +461,7 @@ function SummaryPage() {
               <div className="title-form">
                 <h1>Summary</h1>
                 <div>
-                  <StatusContract status={statusContract}></StatusContract>
+                  <StatusContract status={infoGlob[2]}></StatusContract>
                 </div>
               </div>
               <div className="contract-div">
@@ -239,11 +472,11 @@ function SummaryPage() {
                 <div className="wallet-id-total">
                   <div class="wallet-id-section">
                     <div className="id-metamask">
-                      <strong className="id-name">{"https://payconsent.com/summary/"+ contractAddress}</strong>
+                      <strong className="id-name">{"https://payconsent.com/summary/"+ params.contractaddress}</strong>
                       <i
                         style={{ cursor: "pointer", marginLeft: 2 }}
                         onClick={() => {
-                          navigator.clipboard.writeText("https://payconsent.com/summary/"+ contractAddress);
+                          navigator.clipboard.writeText("https://payconsent.com/summary/"+ params.contractaddress);
                         }}
                         className="far fa-clone"
                       ></i>
@@ -277,7 +510,7 @@ function SummaryPage() {
                     </div>
                     <div className="id-metamask">
                       <i class="fas fa-hashtag"></i>
-                      <strong className="id-name">{OS}</strong>
+                      <strong className="id-name">{infoUser[2]}</strong>
                       <i
                         style={{ cursor: "pointer", marginLeft: 2 }}
                         onClick={() => {
@@ -345,7 +578,7 @@ function SummaryPage() {
                 </div> */}
 
               <div>
-                <Balance status_contract={statusContract} user_type={infoUser[1]}  amount={amount}></Balance>
+                <Balance status_contract={infoGlob[2]} user_type={infoUser[0]}  amount={infoGlob[1]}></Balance>
               </div>
             </div>
             <div className="form-div3">
@@ -355,7 +588,7 @@ function SummaryPage() {
                 </button>
               </div>
               <div>
-                <ButtonStep statusContract={statusContract} user_type={infoUser[1]} status_os={statusContract}></ButtonStep>
+                <ButtonStep statusContract={infoGlob[2]} user_type={infoUser[0]} status_os={infoUser[3]} amount={infoGlob[1]} contractaddress={params.contractaddress} account={address}></ButtonStep>
                 {/* <button className="btn-confirmation" user_type={infoUser[1]} statusContract={statusContract} status_user={infoUser[2]} amount={amount}>Confirm Contract</button> */}
               </div>
               {/* <div>
@@ -487,7 +720,7 @@ export default SummaryPage;
 //                 </button>
 //               </div>
 //               <div>
-//                 <div class="btn-status-pending" type="submit" /*onClick={() => getInfo(params.contractaddress)}*/>
+//                 <div class="btn-status-pending" type="submit" /*onClick={() => getInfo(params.params)}*/>
 //                   Pending
 //                 </div>
 //               </div>
