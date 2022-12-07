@@ -74,17 +74,17 @@ Our solution solve it by creating a form interface that write directly into our 
 
 ## 📈 Business model
 
-  1.  Free to use under 1000$.
-      -> Goal: Increase user adoption and grow daily user database.
-  2.  For each contract, we take 5% pourcent of the total amount.
-  3.  Once we have enough daily users, fundraising with money going into:
-      a) 10% of capital into marketing
-      b) 15-20% of capital into development
-  4.  In case of disagreement, we take extra 10% of the funds to pay external services.
-      -> Way to dissuade the two sides to not respect the terms and agreements of the contract.
-  5.  We plan to have self formed conciliators in the payconsent team, to review desagreements. If the problem persists:
-      -> The justice split.
-      
+  1.  Free to use under 1000$.  
+      -> Goal: Increase user adoption and grow daily user database.  
+  2.  For each contract, we take 5% pourcent of the total amount.  
+  3.  Once we have enough daily users, fundraising with money going into:  
+      a) 10% of capital into marketing  
+      b) 15-20% of capital into development  
+  4.  In case of disagreement, we take extra 10% of the funds to pay external services.  
+      -> Way to dissuade the two sides to not respect the terms and agreements of the contract.  
+  5.  We plan to have self formed conciliators in the payconsent team, to review desagreements. If the problem persists:  
+      -> The justice split.  
+  
 ## 🖥️ Development perspective
 
 - Have a little check of the delivery service
