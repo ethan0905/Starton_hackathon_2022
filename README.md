@@ -5,9 +5,11 @@
 </div>
 
 ## 🤏 Pitch
-We are 4 students from 42 school and we have been experiencing issues with our client payement (deadline, terms of contract, ...).  
-We used blockchain technology to solve this problem. 
- 
+#### Where does the idea of payconsent come from ?
+Actually, we, as newly freelance devs, have been experiencing issues with a client payment. Even to this day we did not receive the money. 
+We wanted to solve this problem using Blockchain technology.
+And that’s how we thought about Payconsent.
+
 ## 📔 Summary
 
  - [❗ Problem](#-problem)
