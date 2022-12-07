@@ -36,6 +36,8 @@ The solution is independant, self governing.
 2. For each mission, we create a unique smart contract that is not editable and not replicable.  
 3. We store the documents on decentralised database (IPFS).
   
+It is a simply-to-use contract creator tool that allows any users to create their own traditional contract, but…. directly on blockchain !  
+  
 We create a climate of trust for every users (Open Trust Framework Model).  
   
 #### What technologies did you use?
