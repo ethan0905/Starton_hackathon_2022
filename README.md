@@ -42,7 +42,7 @@ We create a climate of trust for every users (Open Trust Framework Model).
 - Escalidraw for project diagram  
 - Figma to design and prototype the website  
 - Trello to manage the project development  
-- TailwindCSS and ReactJS for frontend and backend  
+- TailwindCSS and ReactJS for frontend
 - Starton API for the smart contracts managements and ipfs file upload
 - IPFS for the decentralised datastorage  
   
@@ -74,12 +74,12 @@ Our solution solve it by creating a form interface that write directly into our 
 
 ## 📈 Business model
 
-- For each contract, we take a pourcentage of the total amount (6% for services)
-- Create a coin and add staking during the mission
-- Add different type of contract
-- We just need a team with several developper
-- A contract less than 100$ will be free to attract some users
-- With a DAO, we didn't a huge fund rising 
+  1.  Free to use under 1000$.
+      -> Goal: Increase user adoption and grow daily user database.
+  2.  For each contract, we take 5% pourcent of the total amount.
+  3.  Once we have enough daily users, fundraising with money going into:
+      a) 10% of capital into marketing
+      b) 15-20% of capital into development
 
 ## 🖥️ Development perspective
 
