@@ -19,7 +19,6 @@ And that’s how we thought about Payconsent.
  - [💡 Technological invasion](%-technological-invasion)
  - [📈 Business model](#-business-model)
  - [🖥️ Development perspective](#%EF%B8%8F-development-perspective)
- - [⚠️ License](#%EF%B8%8F-license)
   
 ## ❗ Problem
 #### What problem does your project solve? 
@@ -96,5 +95,3 @@ Our solution solve it by creating a form interface that write directly into our 
 - Add a service provider marketplace like malt
 - Create a certification after an amount of contract validate
 
-## ⚠️ License
-Distributed under the MIT License. See `LICENSE.txt` for more information.  
