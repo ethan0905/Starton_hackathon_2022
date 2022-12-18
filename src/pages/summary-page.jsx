@@ -23,36 +23,43 @@ const json = {
 const starton = axios.create({
   baseURL: "https://api.starton.io/v3",
   headers:{
-    "x-api-key": "sk_live_1758cdcd-5791-4d9a-990f-d1ca77432081",
+    "x-api-key": "sk_live_8a0c2480-a82d-4479-a73b-82fa219360d4", // my actual api key
   }
 });
 
 function StatusContract({status}){
   if (status == 0){
     return (
-      <div class="btn-status-progress" type="submit">
-        Not Signed
+      <div class="btn-status-pending" type="submit">
+        In progress
       </div>
     );
   }
   else if (status == 1){
     return (
       <div class="btn-status-progress" type="submit">
-        Signed
+        Both part signed
       </div>    
     );
   }
   else if (status == 2){
     return (
-      <div class="btn-status-progress" type="submit">
+      <div class="btn-status-claimed" type="submit">
         Completed
       </div> 
     );
   }
+  // else if (status == 3){
+  //   return (
+  //     <div class="btn-status-claimed" type="submit">
+  //       Claimed
+  //     </div> 
+  //   );
+  // }
   else{
     return (
       <div class="btn-status-progress" type="submit">
-        Unknown
+        Loading...
       </div>    
     );
   }
@@ -265,7 +272,7 @@ async function sign(account, contractaddress){
   console.log(account);
   const res = await starton.post("/smart-contract/polygon-mumbai/"+contractaddress+"/call",{
     functionName :"signContract",
-    signerWallet: "0xf9537238c56cDb32Ef62a8aed2cA8d9d6253efBf",
+    signerWallet: "0xEa2F4211CD978848B250DeC10C2521FDD91097a2", // my actual starton wallet
     params: [
       String(account),
     ],
@@ -355,7 +362,7 @@ function ButtonStep({user_type, status_os, statusContract, amount, contractaddre
   console.log(user_type, status_os, statusContract);
   if (user_type == 0 && statusContract == 0 && status_os == 0){
     return (
-      <button className="btn-confirmation" disabled>Wait sign of service provider</button>
+      <button className="btn-confirmation" disabled>Waiting for service provider to sign</button>
     );
   }
   else if (user_type == 0 && statusContract == 0 && status_os == 1){
@@ -381,7 +388,7 @@ function ButtonStep({user_type, status_os, statusContract, amount, contractaddre
   }
   else if (statusContract == 2 && user_type == 0){
     return (
-      <button className="btn-confirmation">CONTRACT COMPLETE</button>
+      <button className="btn-confirmation">CONTRACT COMPLETED</button>
     );
   }
   else if (statusContract == 2 && user_type == 1){
