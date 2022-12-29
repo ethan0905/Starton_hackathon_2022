@@ -44,7 +44,7 @@ We create a climate of trust for every users (Open Trust Framework Model).
 - Figma to design and prototype the website  
 - Trello to manage the project development  
 - TailwindCSS and ReactJS for frontend
-- Starton API for the smart contracts managements and ipfs file upload
+- Starton API for the smart contracts managements and file upload
 - IPFS for the decentralised datastorage  
   
 #### What was your biggest technical challenge and how does your solution solve it?
