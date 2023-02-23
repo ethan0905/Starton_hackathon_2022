@@ -1,5 +1,5 @@
 <div align="center">
-
+  <img src="https://komarev.com/ghpvc/?username=ethan0905&label=payconsent%20views&color=0e75b6&style=flat" alt="jcluzet" />
   <img src="src/assets/images/MainPage.png" alt="logo" width="800" height="auto" />
 
 </div>
